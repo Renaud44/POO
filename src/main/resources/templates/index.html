@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head">
+    <title>Accueil</title>
+</head>
+<body>
+<div th:replace="fragments :: navbar"></div>
+
+<div class="container mt-5">
+    <div class="jumbotron bg-light p-5 rounded shadow">
+        <h1 class="display-4 text-primary">Bienvenue sur mon application</h1>
+        <hr class="my-4">
+        <p>Découvrez les fonctionnalités de notre plateforme.</p>
+        <a class="btn btn-success btn-lg" href="#" role="button">Commencer</a>
+    </div>
+</div>
+
+<footer class="bg-light text-center text-lg-start mt-5">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2025 Mon Application
+    </div>
+</footer>
+</body>
+</html>

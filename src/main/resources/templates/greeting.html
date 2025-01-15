@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head">
+    <title>Greeting</title>
+</head>
+<body>
+<div th:replace="fragments :: navbar"></div>
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h2 class="h5 mb-0">Message de bienvenue</h2>
+        </div>
+        <div class="card-body">
+            <p class="lead" th:text="'Bonjour ' + ${nomTemplate} + ' !'"></p>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-light text-center text-lg-start mt-5">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2025 Mon Application
+    </div>
+</footer>
+</body>
+</html>

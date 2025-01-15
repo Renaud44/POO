@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head">
+    <title>Météo</title>
+</head>
+<body>
+<div th:replace="fragments :: navbar"></div>
+
+<div class="container mt-5">
+    <h2>Météo pour l'adresse :</h2>
+    <p th:text="${address}"></p>
+
+    <h3>Détails :</h3>
+    <ul>
+        <li th:each="feature : ${features}">
+            <p th:text="${feature.properties.label}"></p>
+            <p th:text="'Code Postal: ' + ${feature.properties.postcode}"></p>
+            <p th:text="'Ville: ' + ${feature.properties.city}"></p>
+        </li>
+    </ul>
+
+    <h3>Prévisions météo :</h3>
+    <div th:if="${meteo}">
+        <h4>Ville : <span th:text="${meteo.city.name}"></span></h4>
+        <ul>
+            <li th:each="forecast : ${meteo.forecast}">
+                <p th:text="'Jour : ' + ${forecast.day}"></p>
+                <p th:text="'Température Min : ' + ${forecast.tmin} + '°C'"></p>
+                <p th:text="'Température Max : ' + ${forecast.tmax} + '°C'"></p>
+                <p th:text="'Météo : ' + ${forecast.weather}"></p>
+            </li>
+        </ul>
+    </div>
+
+    <div th:if="${error}">
+        <p class="text-danger" th:text="${error}"></p>
+    </div>
+</div>
+</body>
+</html>
+
+
+<!--
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head">
+    <title>Météo</title>
+</head>
+<body>
+<div th:replace="fragments :: navbar"></div>
+
+<div class="container mt-5">
+    <h2>Météo pour l'adresse :</h2>
+    <p th:text="${address}"></p>
+
+    <h3>Détails :</h3>
+    <ul>
+        <li th:each="feature : ${features}">
+            <p th:text="${feature.properties.label}"></p>
+            <p th:text="'Code Postal: ' + ${feature.properties.postcode}"></p>
+            <p th:text="'Ville: ' + ${feature.properties.city}"></p>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
+-->
